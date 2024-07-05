@@ -16,28 +16,38 @@ class CardBuilder {
 
 // create new card objects
 const initialCards = [
-  new CardBuilder('https://i.imgur.com/xKkFQmB.png', 'Alaskan Kitty Shark', 'Alaskan waters', 'Fish, seals, and the occasional surfer', 'Critically Endangered', 1)
+  new CardBuilder('https://i.imgur.com/xKkFQmB.png', 'Alaskan Kitty Shark', 'Alaskan waters', 'Fish, seals, and the occasional surfer', 'Critically Endangered', 1),
+  new CardBuilder('https://i.imgur.com/nybwm8a.jpeg', 'Bengal Tiger', 'India', 'Deer, wild boar, and water buffalo', 'Endangered', 2),
+  new CardBuilder('https://i.imgur.com/nybwm8a.jpeg', 'Blue Whale', 'Worldwide', 'Krill', 'Endangered', 3),
+  new CardBuilder('https://i.imgur.com/nybwm8a.jpeg', 'Giant Panda', 'China', 'Bamboo', 'Vulnerable', 4),
 ]
 
 // build a bit... break down into components
 export default function App() {
-  const [cards, setCards] = useState(initialCards);
+  const [cards] = useState(initialCards);
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+
+  const nextCard = () => {
+    setCurrentCardIndex((prevIndex) => (prevIndex + 1) % cards.length);
+  }
+
+  const currentCard = cards[currentCardIndex];
 
 
   return (
     <div className='App-wrapper'>
       <div className='card-list'>
-        {cards.map((card, index) => (
+        {currentCard && (
           <Card
-            key={index}
-            image={card.image}
-            name={card.name}
-            habitat={card.habitat}
-            diet={card.diet}
-            endangeredLevel={card.endangeredLevel}
-            rank={card.rank}
+            image={currentCard.image}
+            name={currentCard.name}
+            habitat={currentCard.habitat}
+            diet={currentCard.diet}
+            endangeredLevel={currentCard.endangeredLevel}
+            rank={currentCard.rank}
           />
-        ))}
+        )}
       </div>
+      <button onClick={nextCard} className='next-card'>Next Card</button>
     </div>
 )}
