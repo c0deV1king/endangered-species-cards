@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { React, useState } from 'react';
 import './styles.css';
 import Card from './Card';
 
 // create a card class
 class CardBuilder {
-  constructor(image, name, habitat, diet, endangeredLevel, rank) {
+  constructor(image, name, sciName, habitat, diet, endangeredLevel, rank) {
     this.image = image;
     this.name = name;
+    this.sciName = sciName;
     this.habitat = habitat;
     this.diet = diet;
     this.endangeredLevel = endangeredLevel;
@@ -16,11 +17,11 @@ class CardBuilder {
 
 // create new card objects
 const initialCards = [
-  new CardBuilder('https://i.imgur.com/xKkFQmB.png', 'Alaskan Kitty Shark', 'Alaskan waters', 'Fish, seals, and the occasional surfer', 'Critically Endangered', 1),
-  new CardBuilder('https://i.imgur.com/nybwm8a.jpeg', 'Bengal Tiger', 'India', 'Deer, wild boar, and water buffalo', 'Endangered', 2),
-  new CardBuilder('https://i.imgur.com/nybwm8a.jpeg', 'Blue Whale', 'Worldwide', 'Krill', 'Endangered', 3),
-  new CardBuilder('https://i.imgur.com/nybwm8a.jpeg', 'Giant Panda', 'China', 'Bamboo', 'Vulnerable', 4),
-  new CardBuilder('https://i.imgur.com/gEseeGo.jpeg', 'North American Shark Enjoyer', 'North America', 'Cheetos, Coke, and TV Remotes', 'Vulnerable', 5),
+  new CardBuilder('https://i.imgur.com/xKkFQmB.png', 'Alaskan Kitty Shark', 'Alacti Kibushak', 'Alaskan waters', 'Fish, seals, and the occasional surfer.', 'Critically Endangered', 1),
+  new CardBuilder('https://i.imgur.com/nybwm8a.jpeg', 'Bengal Tiger', 'Bungi Tibigur', 'India', 'Deer, wild boar, and water buffalo', 'Endangered', 2),
+  new CardBuilder('https://i.imgur.com/nybwm8a.jpeg', 'Blue Whale', 'Hubiscus Wooo', 'Worldwide', 'Krill', 'Endangered', 3),
+  new CardBuilder('https://i.imgur.com/nybwm8a.jpeg', 'Giant Panda', 'Bigg Burra', 'China', 'Bamboo', 'Vulnerable', 4),
+  new CardBuilder('https://i.imgur.com/gEseeGo.jpeg', 'North American Shark Enjoyer', 'Murican', 'North America', 'Cheetos, Coke, and TV Remotes', 'Vulnerable', 5),
 ]
 
 // build a bit... break down into components
@@ -50,15 +51,16 @@ export default function App() {
 
   return (
     <div className='App-wrapper'>
+      <div className='rank-badge'>{currentCard.rank}</div>
       <div className='card-list'>
         {currentCard && (
           <Card
             image={currentCard.image}
+            endangeredLevel={currentCard.endangeredLevel}
             name={currentCard.name}
+            sciName={currentCard.sciName}
             habitat={currentCard.habitat}
             diet={currentCard.diet}
-            endangeredLevel={currentCard.endangeredLevel}
-            rank={currentCard.rank}
           />
         )}
       </div>

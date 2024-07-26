@@ -1,5 +1,5 @@
 :root {
-    background-color: dimgrey;
+    background-color: rgb(121, 163, 190);
     margin: 0;
     padding: 0;
 }
@@ -10,6 +10,44 @@
     align-items: center;
     height: 100vh;
     width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rank-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: whitesmoke;
+    border-radius: 50px;
+    bottom: 450px;
+    left: 525px;
+}
+
+.endangered-level {
+    display: flex;
+    justify-content: center;
+    background-color: brown;
+    width: 50%;
+    padding: 5px;
+    border-radius: 15px;
+    position: relative;
+    bottom: 30px;
+    margin-bottom: -40px;
+}
+
+.animal-name {
+    margin-bottom: -25px;
+}
+.scientific-name {
+    margin-bottom: 0;
 }
 
 .card-list {
