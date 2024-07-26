@@ -20,6 +20,7 @@ const initialCards = [
   new CardBuilder('https://i.imgur.com/nybwm8a.jpeg', 'Bengal Tiger', 'India', 'Deer, wild boar, and water buffalo', 'Endangered', 2),
   new CardBuilder('https://i.imgur.com/nybwm8a.jpeg', 'Blue Whale', 'Worldwide', 'Krill', 'Endangered', 3),
   new CardBuilder('https://i.imgur.com/nybwm8a.jpeg', 'Giant Panda', 'China', 'Bamboo', 'Vulnerable', 4),
+  new CardBuilder('https://i.imgur.com/gEseeGo.jpeg', 'North American Shark Enjoyer', 'North America', 'Cheetos, Coke, and TV Remotes', 'Vulnerable', 5),
 ]
 
 // build a bit... break down into components

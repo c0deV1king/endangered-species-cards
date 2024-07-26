@@ -5,7 +5,9 @@ import "./styles.css";
 function Card({ image, name, habitat, diet, endangeredLevel, rank }) {
   return (
     <div className="card">
-        <img className="card-image" src={image} alt={name} />
+        <div className="image-container">
+          <img className="card-image" src={image} alt={name} />
+        </div>
         <h1 className="animal-name">{name}</h1>
         <p className="animal-habitat">Habitat: {habitat}</p>
         <p className="animal-diet">Diet: {diet}</p>
