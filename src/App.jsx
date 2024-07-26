@@ -31,6 +31,19 @@ export default function App() {
   const nextCard = () => {
     setCurrentCardIndex((prevIndex) => (prevIndex + 1) % cards.length);
   }
+  // I was trying to make it so that if you hit -1, it would loop back to the end of the array. However,
+  // Now when I hit 0, it no longer goes to the previous card and doesnt go past 0? Unexpected but
+  // is what I was originally trying to do. ** Research and understand why it does this **
+  const prevCard = () => {
+    if (currentCardIndex < 0) {
+      setCurrentCardIndex((prevIndex) => (prevIndex - 1) % cards.length - 1);
+    } 
+    if (currentCardIndex > 0) {
+      setCurrentCardIndex((prevIndex) => (prevIndex - 1) % cards.length);
+    }
+  }
+
+  console.log(currentCardIndex)
 
   const currentCard = cards[currentCardIndex];
 
@@ -50,5 +63,6 @@ export default function App() {
         )}
       </div>
       <button onClick={nextCard} className='next-card'>Next Card</button>
+      <button onClick={prevCard} className='prev-card'>Prev Card</button>
     </div>
 )}
