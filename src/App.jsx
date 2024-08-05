@@ -50,6 +50,7 @@ export default function App() {
 
 
   return (
+    <>
     <div className='App-wrapper'>
       <div className='rank-badge'>{currentCard.rank}</div>
       <div className='card-list'>
@@ -64,7 +65,8 @@ export default function App() {
           />
         )}
       </div>
-      <button onClick={nextCard} className='next-card'>Next Card</button>
-      <button onClick={prevCard} className='prev-card'>Prev Card</button>
+      <button onClick={nextCard} className='next-card'> ‎ </button>
+      <button onClick={prevCard} className='prev-card'> ‎ </button>
     </div>
+    </>
 )}

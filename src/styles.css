@@ -1,5 +1,13 @@
+/* colour palette */
+/* FBFFDC - white/tan 
+    D0F5BE - green
+    98EECC - torquoise
+    79E0EE - bright blue (BG)
+    6BCAD7 - darkened bright blue (BG details)
+*/
+
 :root {
-    background-color: rgb(121, 163, 190);
+    background-image: url(/src/img/background.png);
     margin: 0;
     padding: 0;
 }
@@ -25,39 +33,46 @@
     position: relative;
     width: 50px;
     height: 50px;
-    background-color: whitesmoke;
+    background-color: #D0F5BE;
     border-radius: 50px;
     bottom: 450px;
     left: 525px;
+    z-index: 5;
+    filter: drop-shadow(0px 0px 5px black);
 }
 
 .endangered-level {
     display: flex;
     justify-content: center;
-    background-color: brown;
+    background-color: #D0F5BE;
     width: 50%;
     padding: 5px;
     border-radius: 15px;
     position: relative;
-    bottom: 30px;
+    bottom: 65px;
     margin-bottom: -40px;
+    filter: drop-shadow(0px 5px 5px black);
 }
 
 .animal-name {
-    margin-bottom: -25px;
+    font-size: 16px;
+    padding-left: 10px;
 }
 .scientific-name {
-    margin-bottom: 0;
+    font-size: 16px;
+    padding-right: 10px;
 }
 
 .card-list {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: lightgrey;
+    background-color: #98EECC;
     width: 504px;
     height: 896px;
     border-radius: 20px;
+    border: solid #FBFFDC;
+    filter: drop-shadow(0px 0px 10px black);
 }
 
 .card-image {
@@ -65,25 +80,129 @@
     margin-top: 35px;
     width: 475px;
     height: 448px;
+    border-radius: 20px;
 }
 
 .image-container {
     display: flex;
     justify-content: center;
+    position: relative;
+    bottom: 35px;
 }
 
-.next-card {
+.name-bar {
     position: relative;
-    top: 390px;
-    right: 50px;
+    z-index: 1;
+    background-color: #D0F5BE;
+    border-radius: 15px;
+    width: 85%;
+    height: 30px;
+    top: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    filter: drop-shadow(0px 5px 5px black);
+}
+
+/* Card Tabs */
+
+.diet-tab {
+    position: relative;
+    bottom: 71px;
+    width: 504px;
+    height: 45px;
+    background-color: #FBFFDC;
+    border-radius: 20px;
+    z-index: 5;
+
+    display: flex;
+    justify-content: center;
+
+    filter: drop-shadow(0px -10px 10px black);
+}
+
+.habitat-tab {
+    position: relative;
+    bottom: 26px;
+    width: 504px;
+    height: 90px;
+    background-color: #D0F5BE;
+    border-radius: 20px;
+    z-index: 4;
+
+    display: flex;
+    justify-content: center;
+    
+    filter: drop-shadow(0px -10px 10px black);
+}
+
+.population-tab {
+    position: relative;
+    bottom: -64px;
+    width: 504px;
+    height: 135px;
+    background-color: #FBFFDC;
+    border-radius: 20px;
+    z-index: 3;
+
+    display: flex;
+    justify-content: center;
+
+    filter: drop-shadow(0px -10px 10px black);
+}
+
+.take-action-tab {
+    position: relative;
+    bottom: -199px;
+    width: 504px;
+    height: 180px;
+    background-color: #D0F5BE;
+    border-radius: 20px;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+
+    filter: drop-shadow(0px -10px 10px black);
+}
+
+/* Next/Prev card buttons */
+
+.next-card {
+    background-image: url(/src/img/arrow-right-circle.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color:rgba(0, 38, 255, 0);
+    border: none;
+    filter: invert(89%) sepia(18%) saturate(263%) hue-rotate(33deg) brightness(108%) contrast(102%);
+
+    position: relative;
+    left: 25px;
     height: 75px;
     width: 75px;
+    opacity: 50%;
+    transition: 1s;
+}
+
+.next-card:hover, .prev-card:hover {
+    opacity: 100%;
+    transition: 1s;
 }
 
 .prev-card {
+    background-image: url(/src/img/arrow-left-circle.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color:rgba(0, 38, 255, 0);
+    border: none;
+    filter: invert(89%) sepia(18%) saturate(263%) hue-rotate(33deg) brightness(108%) contrast(102%);
+
     position: relative;
-    top: 390px;
-    right: 600px;
+    right: 685px;
     height: 75px;
     width: 75px;
+    opacity: 50%;
+    transition: 1s;
 }
