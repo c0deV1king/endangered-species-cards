@@ -1,6 +1,14 @@
 import React from "react";
 import "./styles.css";
 
+
+
+const makeActiveTab = (event, id) => {
+  if (event.target.style.height = '50px') {
+    event.target.style.height = '500px'
+  }
+}
+
 // creating a function to layout a card
 function Card({ image, name, sciName, habitat, diet, endangeredLevel, rank }) {
   return (
@@ -17,19 +25,19 @@ function Card({ image, name, sciName, habitat, diet, endangeredLevel, rank }) {
 
         <p className='endangered-level'>{endangeredLevel}</p>
 
-        <div className="take-action-tab">
+        <div className="take-action-tab" onClick={makeActiveTab}>
           <p>Take Action</p>
         </div>
 
-        <div className="population-tab">
+        <div className="population-tab" onClick={makeActiveTab}>
           <p>Populations</p>
         </div>
 
-        <div className="habitat-tab">
+        <div className="habitat-tab" onClick={makeActiveTab}>
           <p>Habitat</p>
         </div>
 
-        <div className="diet-tab">
+        <div className="diet-tab" onClick={makeActiveTab}>
           <p>Diet</p>
         </div>
     </div>

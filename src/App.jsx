@@ -4,7 +4,8 @@ import Card from './Card';
 
 // create a card class
 class CardBuilder {
-  constructor(image, name, sciName, habitat, diet, endangeredLevel, rank) {
+  constructor(id, image, name, sciName, habitat, diet, endangeredLevel, rank) {
+    this.id = id;
     this.image = image;
     this.name = name;
     this.sciName = sciName;
@@ -17,11 +18,11 @@ class CardBuilder {
 
 // create new card objects
 const initialCards = [
-  new CardBuilder('https://i.imgur.com/xKkFQmB.png', 'Alaskan Kitty Shark', 'Alacti Kibushak', 'Alaskan waters', 'Fish, seals, and the occasional surfer.', 'Critically Endangered', 1),
-  new CardBuilder('https://i.imgur.com/nybwm8a.jpeg', 'Bengal Tiger', 'Bungi Tibigur', 'India', 'Deer, wild boar, and water buffalo', 'Endangered', 2),
-  new CardBuilder('https://i.imgur.com/nybwm8a.jpeg', 'Blue Whale', 'Hubiscus Wooo', 'Worldwide', 'Krill', 'Endangered', 3),
-  new CardBuilder('https://i.imgur.com/nybwm8a.jpeg', 'Giant Panda', 'Bigg Burra', 'China', 'Bamboo', 'Vulnerable', 4),
-  new CardBuilder('https://i.imgur.com/gEseeGo.jpeg', 'North American Shark Enjoyer', 'Murican', 'North America', 'Cheetos, Coke, and TV Remotes', 'Vulnerable', 5),
+  new CardBuilder('1','https://i.imgur.com/xKkFQmB.png', 'Alaskan Kitty Shark', 'Alacti Kibushak', 'Alaskan waters', 'Fish, seals, and the occasional surfer.', 'Critically Endangered', 1),
+  new CardBuilder('2','https://i.imgur.com/nybwm8a.jpeg', 'Bengal Tiger', 'Bungi Tibigur', 'India', 'Deer, wild boar, and water buffalo', 'Endangered', 2),
+  new CardBuilder('3','https://i.imgur.com/nybwm8a.jpeg', 'Blue Whale', 'Hubiscus Wooo', 'Worldwide', 'Krill', 'Endangered', 3),
+  new CardBuilder('4','https://i.imgur.com/nybwm8a.jpeg', 'Giant Panda', 'Bigg Burra', 'China', 'Bamboo', 'Vulnerable', 4),
+  new CardBuilder('5','https://i.imgur.com/gEseeGo.jpeg', 'North American Shark Enjoyer', 'Murican', 'North America', 'Cheetos, Coke, and TV Remotes', 'Vulnerable', 5),
 ]
 
 // build a bit... break down into components
